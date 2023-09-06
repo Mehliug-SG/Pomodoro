@@ -7,11 +7,41 @@ let pause = [0, 5, 0];
 //the time that will be ticking down
 let current = [0, 0, 0];
 
-function init(){
-    document.getElementById("start_stop").innerHTML = "START";
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 
-    console.log(current[1]);
-    console.log(work[1]);
+//this function refreshes the timer's display
+function refresh(){
+    document.getElementById("hour").textContent = current[0];
+    document.getElementById("minute").textContent = current[1];
+    document.getElementById("second").textContent = current[2];
+}
+
+//ticks down the given time by one second
+function tick_down(time){
+
+    console.log("aeiou");
+
+    time[2] -= 1;
+    if(time[2] == -1){
+        time[2] = 59;
+        time[1] -= 1;
+        if(time[1] == -1){
+            time[1] = 59;
+            time[0] -= 1;
+        }
+    }
+
+    console.log(time[0]);
+    console.log(time[1]);
+    console.log(time[2]);
+
+    return time;
+}
+
+function init(){
+    document.getElementById("start_stop").textContent = "START";
 
     refresh();
 
@@ -25,19 +55,20 @@ function init(){
 }
 
 //manages the work clock
-function clock_work(){
+async function clock_work(){
 
-    
+    document.getElementById("working_state").innerHTML = "working...";
 
     current[0] = work[0];
     current[1] = work[1];
     current[2] = work[2];
 
-    console.log(current[1]);
-    console.log(work[1]);
-
     while(current[0] + current[1] + current[2] != 0){
+
+        await sleep(1000);
+
         current = tick_down(current);
+
         refresh();
     }
 
@@ -47,14 +78,20 @@ function clock_work(){
 }
 
 //manages the pause work
-function clock_pause(){
+async function clock_pause(){
+
+    document.getElementById("working_state").innerHTML = "resting...";
 
     current[0] = pause[0];
     current[1] = pause[1];
     current[2] = pause[2];
 
     while(current[0] + current[1] + current[2] != 0){
+
+        await sleep(1000);
+
         current = tick_down(current);
+
         refresh();
     }
 
@@ -64,27 +101,6 @@ function clock_pause(){
 }
 
 
-//ticks down the given time by one second
-function tick_down(time){
-    time[2] -= 1;
-    if(time[2] == -1){
-        time[2] = 59;
-        time[1] -= 1;
-        if(time[1] == -1){
-            time[1] = 59;
-            time[0] -= 1;
-        }
-    }
-    return time;
-}
-
-
-//this function refreshes the timer's display
-function refresh(){
-    document.getElementById("hour").INNERHTML = current[0];
-    document.getElementById("minute").INNERHTML = current[1];
-    document.getElementById("second").INNERHTML = current[2];
-}
 
 
 
