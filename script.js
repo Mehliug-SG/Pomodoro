@@ -21,8 +21,6 @@ function refresh(){
 //ticks down the given time by one second
 function tick_down(time){
 
-    console.log("aeiou");
-
     time[2] -= 1;
     if(time[2] == -1){
         time[2] = 59;
@@ -43,6 +41,8 @@ function tick_down(time){
 function init(){
     document.getElementById("start_stop").textContent = "START";
 
+    document.getElementById("body").style.backgroundColor = "rgb(214, 214, 214)";
+
     refresh();
 
     var1 = document.getElementById("start_stop").addEventListener("click", () => {
@@ -59,17 +59,20 @@ async function clock_work(){
 
     document.getElementById("working_state").innerHTML = "working...";
 
+    document.getElementById("body").style.backgroundColor = "tomato";
+
     current[0] = work[0];
     current[1] = work[1];
     current[2] = work[2];
 
     while(current[0] + current[1] + current[2] != 0){
 
+        refresh();
+
         await sleep(1000);
 
         current = tick_down(current);
-
-        refresh();
+        
     }
 
     
@@ -82,17 +85,20 @@ async function clock_pause(){
 
     document.getElementById("working_state").innerHTML = "resting...";
 
+    document.getElementById("body").style.backgroundColor = "rgb(91, 175, 212)";
+
     current[0] = pause[0];
     current[1] = pause[1];
     current[2] = pause[2];
 
     while(current[0] + current[1] + current[2] != 0){
 
+        refresh();
+
         await sleep(1000);
 
         current = tick_down(current);
 
-        refresh();
     }
 
     
