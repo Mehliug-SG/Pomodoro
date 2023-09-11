@@ -8,11 +8,19 @@
 
 #start_stop{
     display : flex;
-    justify-content:center;
+    margin : auto;
 }
 
+#working_state{
+    margin : auto;
+    text-align : center;
+}
 
 #container{
     width:100%;
     height:100%;
+}
+
+body{
+    transition: background-color 5000ms linear;
 }
