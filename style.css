@@ -21,6 +21,6 @@
     height:100%;
 }
 
-body{
+#body{
     transition: background-color 5000ms linear;
 }

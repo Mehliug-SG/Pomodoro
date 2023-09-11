@@ -41,13 +41,14 @@ function tick_down(time){
 function init(){
     document.getElementById("start_stop").textContent = "START";
 
-    document.getElementById("body").style.backgroundColor = "rgb(214, 214, 214)";
+    document.getElementById("body").style.backgroundColor = "rgb(200 200, 200)";
 
     refresh();
 
     var1 = document.getElementById("start_stop").addEventListener("click", () => {
 
         clock_work();
+
         document.getElementById("start_stop").style.display = "none";
 
     }, {once : true});
