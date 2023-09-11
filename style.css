@@ -1,9 +1,31 @@
 #title{
+    font-size: 500%;
+    font-family : arial;
     text-align : center;
+    margin-bottom : 8%;
 }
 
 #timer{
+    left : 50%;
+    top : 50%;
+
+    position : absolute;
+
     text-align : center;
+}
+
+.circle{
+
+    margin : auto;
+    border-radius : 50%;
+    height : 200px;
+    width : 200px;
+    border : 2px solid blue;
+    text-align : center;
+
+    position : relative;
+
+    margin-bottom : 5%
 }
 
 #start_stop{
@@ -12,8 +34,11 @@
 }
 
 #working_state{
-    margin : auto;
+
+    font-family : arial;
     text-align : center;
+
+    margin-bottom : 3%;
 }
 
 #container{
