@@ -42,6 +42,7 @@ function init(){
     document.getElementById("start_stop").textContent = "START";
 
     document.getElementById("body").style.backgroundColor = "rgb(200 200, 200)";
+    document.getElementById("body").style.transition = "background-color 5000ms linear";
 
     refresh();
 
@@ -60,7 +61,7 @@ async function clock_work(){
 
     document.getElementById("working_state").innerHTML = "working...";
 
-    document.getElementById("body").style.backgroundColor = "tomato";
+    document.getElementById("body").style.backgroundColor = "rgb(255, 128, 128)";
 
     current[0] = work[0];
     current[1] = work[1];
