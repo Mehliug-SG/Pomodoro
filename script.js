@@ -31,10 +31,6 @@ function tick_down(time){
         }
     }
 
-    console.log(time[0]);
-    console.log(time[1]);
-    console.log(time[2]);
-
     return time;
 }
 
@@ -42,7 +38,7 @@ function init(){
     document.getElementById("start_stop").textContent = "START";
 
     document.getElementById("body").style.backgroundColor = "rgb(200 200, 200)";
-    document.getElementById("body").style.transition = "background-color 5000ms linear";
+    document.getElementById("body").style.transition = "background-color 3000ms linear";
 
     refresh();
 
@@ -107,6 +103,14 @@ async function clock_pause(){
 
     clock_work();
 }
+
+
+//manages the change of allocated time for work
+work_selection = document.getElementById("work_time").addEventListener("change", () => {
+    console.log(document.getElementById("work_time").value);
+    work = [Number(document.getElementById("work_time").value.split(":")[0]),Number(document.getElementById("work_time").value.split(":")[1]),0]
+})
+
 
 
 
