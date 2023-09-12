@@ -70,7 +70,7 @@ async function clock_work(){
 
         refresh();
 
-        await sleep(1);
+        await sleep(1000);
 
         current = tick_down(current);
         
@@ -96,7 +96,7 @@ async function clock_pause(){
 
         refresh();
 
-        await sleep(1);
+        await sleep(1000);
 
         current = tick_down(current);
 
