@@ -37,6 +37,9 @@ function tick_down(time){
 function init(){
     document.getElementById("start_stop").textContent = "START";
 
+    work = [Number(document.getElementById("work_time").value.split(":")[0]),Number(document.getElementById("work_time").value.split(":")[1]),0];
+    pause = [Number(document.getElementById("rest_time").value.split(":")[0]),Number(document.getElementById("rest_time").value.split(":")[1]),0];
+
     document.getElementById("body").style.backgroundColor = "rgb(200 200, 200)";
     document.getElementById("body").style.transition = "background-color 3000ms linear";
 
@@ -107,10 +110,13 @@ async function clock_pause(){
 
 //manages the change of allocated time for work
 work_selection = document.getElementById("work_time").addEventListener("change", () => {
-    console.log(document.getElementById("work_time").value);
-    work = [Number(document.getElementById("work_time").value.split(":")[0]),Number(document.getElementById("work_time").value.split(":")[1]),0]
+    work = [Number(document.getElementById("work_time").value.split(":")[0]),Number(document.getElementById("work_time").value.split(":")[1]),0];
 })
 
+//manages the change of allocated time for work
+rest_selection = document.getElementById("rest_time").addEventListener("change", () => {
+    pause = [Number(document.getElementById("rest_time").value.split(":")[0]),Number(document.getElementById("rest_time").value.split(":")[1]),0];
+})
 
 
 
