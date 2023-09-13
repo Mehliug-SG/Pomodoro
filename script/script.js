@@ -37,9 +37,6 @@ function tick_down(time){
 function init(){
     document.getElementById("start_stop").textContent = "START";
 
-    work = [Number(document.getElementById("work_time").value.split(":")[0]),Number(document.getElementById("work_time").value.split(":")[1]),0];
-    pause = [Number(document.getElementById("rest_time").value.split(":")[0]),Number(document.getElementById("rest_time").value.split(":")[1]),0];
-
     document.getElementById("body").style.backgroundColor = "rgb(200 200, 200)";
     document.getElementById("body").style.transition = "background-color 3000ms linear";
 
