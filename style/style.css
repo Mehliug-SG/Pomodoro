@@ -57,5 +57,6 @@
 }
 
 #time_selection_label{
-    word-spacing: 2cm;
+    word-spacing: 4cm;
+    margin-left : 100px;
 }
