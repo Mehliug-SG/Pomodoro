@@ -36,13 +36,30 @@ function tick_down(time){
 
 function init(){
 
-    if(document.getElementById("work_time").value != ""){
-        work = [Number(document.getElementById("work_time").value.split(":")[0]),Number(document.getElementById("work_time").value.split(":")[1]),0];
+    if(document.getElementById("work_hour").value != ""){
+        work[0] = Number(document.getElementById("work_hour").value);
     }
 
-    if(document.getElementById("rest_time").value != ""){
-        pause = [Number(document.getElementById("rest_time").value.split(":")[0]),Number(document.getElementById("rest_time").value.split(":")[1]),0];
+    if(document.getElementById("work_minute").value != ""){
+        work[1] = Number(document.getElementById("work_minute").value);
     }
+
+    if(document.getElementById("work_second").value != ""){
+        work[2] = Number(document.getElementById("work_second").value);
+    }
+
+    if(document.getElementById("rest_hour").value != ""){
+        rest[0] = Number(document.getElementById("rest_hour").value);
+    }
+
+    if(document.getElementById("rest_minute").value != ""){
+        rest[1] = Number(document.getElementById("rest_minute").value);
+    }
+
+    if(document.getElementById("rest_second").value != ""){
+        rest[2] = Number(document.getElementById("rest_second").value);
+    }
+
     
     document.getElementById("start_stop").textContent = "START";
 
@@ -115,18 +132,42 @@ async function clock_pause(){
 
 
 //manages the change of allocated time for work
-work_selection = document.getElementById("work_time").addEventListener("change", () => {
-    if(document.getElementById("work_time").value != ""){
-        work = [Number(document.getElementById("work_time").value.split(":")[0]),Number(document.getElementById("work_time").value.split(":")[1]),0];
+work_hour = document.getElementById("work_hour").addEventListener("change", () => {
+    if(document.getElementById("work_hour").value != ""){
+        work[0] = Number(document.getElementById("work_hour").value);
     }
-})
+});
 
-//manages the change of allocated time for work
-rest_selection = document.getElementById("rest_time").addEventListener("change", () => {
-    if(document.getElementById("rest_time").value != ""){
-        pause = [Number(document.getElementById("rest_time").value.split(":")[0]),Number(document.getElementById("rest_time").value.split(":")[1]),0];
+work_minute = document.getElementById("work_minute").addEventListener("change", () => {
+    if(document.getElementById("work_minute").value != ""){
+        work[1] = Number(document.getElementById("work_minute").value);
     }
-})
+});
+
+work_second = document.getElementById("work_second").addEventListener("change", () => {
+    if(document.getElementById("work_second").value != ""){
+        work[2] = Number(document.getElementById("work_second").value);
+    }
+});
+
+//manages the change of allocated time for rest
+rest_hour = document.getElementById("rest_hour").addEventListener("change", () => {
+    if(document.getElementById("rest_hour").value != ""){
+        rest[0] = Number(document.getElementById("rest_hour").value);
+    }
+});
+
+rest_minute = document.getElementById("rest_minute").addEventListener("change", () => {
+    if(document.getElementById("rest_minute").value != ""){
+        rest[1] = Number(document.getElementById("rest_minute").value);
+    }
+});
+
+rest_second = document.getElementById("rest_second").addEventListener("change", () => {
+    if(document.getElementById("rest_second").value != ""){
+        rest[2] = Number(document.getElementById("rest_second").value);
+    }
+});
 
 
 

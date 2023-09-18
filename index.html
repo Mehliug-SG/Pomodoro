@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
+        <meta charset="UTF-8"> 
         <title>Document</title>
         <link rel="stylesheet" href="style/style.css" type="text/css"/>
 
@@ -31,16 +31,35 @@
 
             
 
-        <button id="start_stop"></button>
+        <button id="start_stop">START</button>
 
 
         <div id="time_selection">
 
             <form>
-                <label for="work_time">Work timer</label>
-                <input type="time" id="work_time" min="00:00" max="24:00"/>
-                <label for="rest_time">Rest timer</label>
-                <input type="time" id="rest_time" min="00:00" max="24:00"/>
+                <div id="time_selection_label">Work Rest</div>
+                <br>
+                <br>
+                <label for="work_hour">Hour</label>
+                <input type="number" id="work_hour" min="0" max="99"/>
+                <label for="rest_hour">Hour</label>
+                <input type="number" id="rest_hour" min="0" max="99"/>
+
+                <br>
+                <br>
+
+                <label for="work_minute">Mins</label>
+                <input type="number" id="work_minute" min="0" max="59"/>
+                <label for="rest_minute">Mins</label>
+                <input type="number" id="rest_minute" min="0" max="59"/>
+
+                <br>
+                <br>
+
+                <label for="work_second">Secs</label>
+                <input type="number" id="work_second" min="0" max="59"/>
+                <label for="rest_second">Secs</label>
+                <input type="number" id="rest_second" min="0" max="59"/>
             </form>
 
         </div>
