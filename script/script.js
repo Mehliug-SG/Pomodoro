@@ -36,29 +36,12 @@ function tick_down(time){
 
 function init(){
 
-    if(document.getElementById("work_hour").value != ""){
-        work[0] = Number(document.getElementById("work_hour").value);
-    }
-
-    if(document.getElementById("work_minute").value != ""){
-        work[1] = Number(document.getElementById("work_minute").value);
-    }
-
-    if(document.getElementById("work_second").value != ""){
-        work[2] = Number(document.getElementById("work_second").value);
-    }
-
-    if(document.getElementById("rest_hour").value != ""){
-        rest[0] = Number(document.getElementById("rest_hour").value);
-    }
-
-    if(document.getElementById("rest_minute").value != ""){
-        rest[1] = Number(document.getElementById("rest_minute").value);
-    }
-
-    if(document.getElementById("rest_second").value != ""){
-        rest[2] = Number(document.getElementById("rest_second").value);
-    }
+    document.getElementById("work_hour").value = 0;
+    document.getElementById("work_minute").value = 25;
+    document.getElementById("work_second").value = 0;
+    document.getElementById("rest_hour").value = 0;
+    document.getElementById("rest_minute").value = 5;
+    document.getElementById("rest_second").value = 0;
 
     
     document.getElementById("start_stop").textContent = "START";
