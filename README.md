@@ -17,7 +17,7 @@ This application offers a solution to this issue.
 By managing your work and rest on a strict timer, you can save stamina and improve productivity.
 
 
-##Features
+## Features
 
 Upon entering the website, you are confronted with the timer, set at 0.
 
