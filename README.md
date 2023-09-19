@@ -23,17 +23,17 @@ Upon entering the website, you are confronted with the timer, set at 0.
 
 At this moment you can :
 
--Start the timer with the default time (25 mn for work, 5 mn for rest)
--Modify the time you will work
--Modify the time you will rest
+- Start the timer with the default time (25 mn for work, 5 mn for rest)
+- Modify the time you will work
+- Modify the time you will rest
 
 Once you launch the timer, you cannot pause it. However, you can reset it.
 
 Once the timer is launched, you can :
 
--Reset the timer. The next time you launch it, it will start back at the beginning of the work cycle.
--Change the time you will work. Modifications will only apply at the beginning of the next work cycle.
--Change the time you will rest. Modifications will only apply at the beginning of the next work cycle.
+- Reset the timer. The next time you launch it, it will start back at the beginning of the work cycle.
+- Change the time you will work. Modifications will only apply at the beginning of the next work cycle.
+- Change the time you will rest. Modifications will only apply at the beginning of the next work cycle.
 
 
 ## Credits
