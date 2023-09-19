@@ -80,7 +80,7 @@ async function clock_work(){
 
     document.getElementById("working_state").innerHTML = "working...";
 
-    document.getElementById("body").style.backgroundColor = "rgb(255, 128, 128)";
+    document.getElementById("body").style.backgroundColor = "tomato";
 
     console.log(work);
 
@@ -173,21 +173,21 @@ work_second = document.getElementById("work_second").addEventListener("change", 
 //manages the change of allocated time for rest
 rest_hour = document.getElementById("rest_hour").addEventListener("change", () => {
     if(document.getElementById("rest_hour").value != ""){
-        rest[0] = Number(document.getElementById("rest_hour").value);
+        pause[0] = Number(document.getElementById("rest_hour").value);
         refresh();
     }
 });
 
 rest_minute = document.getElementById("rest_minute").addEventListener("change", () => {
     if(document.getElementById("rest_minute").value != ""){
-        rest[1] = Number(document.getElementById("rest_minute").value);
+        pause[1] = Number(document.getElementById("rest_minute").value);
         refresh();
     }
 });
 
 rest_second = document.getElementById("rest_second").addEventListener("change", () => {
     if(document.getElementById("rest_second").value != ""){
-        rest[2] = Number(document.getElementById("rest_second").value);
+        pause[2] = Number(document.getElementById("rest_second").value);
         refresh();
     }
 });
