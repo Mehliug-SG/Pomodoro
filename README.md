@@ -36,7 +36,7 @@ Once the timer is launched, you can :
 -Change the time you will rest. Modifications will only apply at the beginning of the next work cycle.
 
 
-##Credits
+## Credits
 
 [Guilhem Saint-Gaudin](https://github.com/Mehliug-SG) - the student who created the page.
 
