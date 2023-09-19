@@ -7,6 +7,9 @@ let pause = [0, 5, 0];
 //the time that will be ticking down
 let current = [0, 0, 0];
 
+//probably a bad idea, using a global variable to communicate to another function, used to reset the timer
+let reset = false;
+
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -44,20 +47,31 @@ function init(){
     document.getElementById("rest_second").value = 0;
 
     
-    document.getElementById("start_stop").textContent = "START";
+    document.getElementById("reset").style.display = "none";
 
     document.getElementById("body").style.backgroundColor = "rgb(200 200, 200)";
     document.getElementById("body").style.transition = "background-color 3000ms linear";
 
     refresh();
 
-    var1 = document.getElementById("start_stop").addEventListener("click", () => {
+    var1 = document.getElementById("start").addEventListener("click", () => {
+
 
         clock_work();
 
-        document.getElementById("start_stop").style.display = "none";
+        document.getElementById("start").style.display = "none";
+        document.getElementById("reset").style.display = "block";
 
-    }, {once : true});
+    });
+
+    var2 = document.getElementById("reset").addEventListener("click", (() =>{
+
+        reset = true;
+
+        document.getElementById("start").style.display = "block";
+        document.getElementById("reset").style.display = "none";
+        
+    }))
 
 }
 
@@ -68,15 +82,26 @@ async function clock_work(){
 
     document.getElementById("body").style.backgroundColor = "rgb(255, 128, 128)";
 
-    current[0] = work[0];
-    current[1] = work[1];
-    current[2] = work[2];
+    console.log(work);
+
+    current = Array.from(work);
 
     while(current[0] + current[1] + current[2] != 0){
 
         refresh();
 
         await sleep(1000);
+
+        if(reset){
+            reset = false;
+            
+            current = Array.from(work);
+            refresh();
+
+            return;
+        }
+
+        
 
         current = tick_down(current);
         
@@ -94,15 +119,24 @@ async function clock_pause(){
 
     document.getElementById("body").style.backgroundColor = "rgb(91, 175, 212)";
 
-    current[0] = pause[0];
-    current[1] = pause[1];
-    current[2] = pause[2];
+    current = Array.from(pause);
 
     while(current[0] + current[1] + current[2] != 0){
 
         refresh();
 
         await sleep(1000);
+
+        if(reset){
+            reset = false;
+            
+            current = Array.from(work);
+            refresh();
+
+            return;
+        }
+
+        
 
         current = tick_down(current);
 
